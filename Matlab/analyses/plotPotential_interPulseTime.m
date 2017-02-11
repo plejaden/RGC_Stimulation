@@ -1,0 +1,13 @@
+close all;
+plot(T_1997_177,Y_1997_177(:,1,1),'red', T_2010,Y_2010(:,1,1),'green',T_2010_236,Y_2010_236(:,1,1),'blue');
+legend('Fohlmeister 1997 [177uA/cm2]', 'Fohlmeister 2010 [159uA/cm2]','Fohlmeister 2010 [236uA/cm2]', 'Location', 'south');
+xl=xlabel('t [ms]');
+yl=ylabel('Vm [mV]');
+
+
+cleanfigure;
+matlab2tikz([ '/tmp/membranPotential' '/' 'interPulseTimeComparison.tikz' ], 'showInfo', false, ...
+     'parseStrings',false, ...
+     'standalone', false, ...
+     'height', '\figureheight', ...
+     'width','\figurewidth');

@@ -1,0 +1,13 @@
+close all;
+plot(T,Y(:,1,1),'blue');
+%legend('Fohlmeister 1997 [88uA/cm2]', 'Fohlmeister 1997 [177uA/cm2]', 'Fohlmeister 2010 [159uA/cm2]', 'Location', 'south');
+xl=xlabel('t [ms]');
+yl=ylabel('Vm [mV]');
+
+
+cleanfigure;
+matlab2tikz([ '/tmp/membranPotential' '/' 'fcn2010_cat20_selfstimulus.tikz' ], 'showInfo', false, ...
+     'parseStrings',false, ...
+     'standalone', false, ...
+     'height', '\figureheight', ...
+     'width','\figurewidth');
